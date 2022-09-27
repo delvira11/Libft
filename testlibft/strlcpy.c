@@ -6,14 +6,14 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 19:59:56 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/24 15:50:43 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:01:48 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlcpy(char *restrict dst, const char *restrict src, size_t dstsize)
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
 	unsigned int	cont;
 	unsigned int	i;

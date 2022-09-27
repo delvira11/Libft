@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 19:11:51 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/23 12:49:06 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/26 17:35:03 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,9 +30,9 @@ i = 0;
 	return (b);
 }
 
-// int main()
-// {
-// char str[50] = "Hola buenos diass";
-// printf ("%s\n", ft_memset(str, '&', 50) );
-// printf ("%s\n", memset(str, '&', 50));
-// }
+int main()
+{
+char str[] = "Hola buenos diass";
+printf ("%s\n", ft_memset(str, 'c', 5) );
+printf ("%s\n", memset(str, 'c', 5));
+}

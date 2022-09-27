@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   memchr.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:10:48 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/27 17:19:29 by delvira-         ###   ########.fr       */
+/*   Created: 2022/09/26 18:33:33 by delvira-          #+#    #+#             */
+/*   Updated: 2022/09/26 18:53:21 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	caracter;
 	char	*str;
-	int		i;
+	size_t	i;
 
 caracter = c;
 str = (char *)s;
 i = 0;
-	while (str[i] != '\0')
+	while (i < n)
 	{
 		if (str[i] == caracter)
 		{
@@ -37,10 +37,10 @@ i = 0;
 	return (NULL);
 }
 
-// int main()
-// {
-// char strj[] = "";
-// printf("%s\n", strchr(strj, 'a'));
-// char strx[] = "";
-// printf("%s\n", ft_strchr(strx, 'a'));
-// }
+
+int main()
+{
+char str[] = "Holaaa";
+printf("%s", ft_memchr(str, 'l', 5));
+printf("%s", memchr(str, 'l', 5));
+}

@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:24:29 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/24 18:33:25 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/26 18:24:54 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ i = 0;
 
 int main()
 {
-char str[50] = "Bo.bnjob.ur";
-printf("%s\n", strrchr(str, '.'));
-printf("%s\n", ft_strrchr(str, '.'));
+char str[50] = "tripouille";
+printf("%s\n", strrchr(str, 't' + 256 == str));
+printf("%s\n", ft_strrchr(str, 't' + 256 == str));
 }

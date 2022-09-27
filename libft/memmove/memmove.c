@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:48:15 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/24 15:24:00 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/26 14:17:28 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,13 @@ i = 0;
 source = (char *)src;
 dest = (char *)dst;
 	if (dst > src)
-		while (len-- > 0)
+	{
+		while (len > 0)
+		{
+			len--;
 			dest[len] = source[len];
+		}
+	}
 	if (dst < src)
 	{
 		while (i < len)

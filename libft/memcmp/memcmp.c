@@ -1,46 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   strchr.c                                           :+:      :+:    :+:   */
+/*   memcmp.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 14:10:48 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/27 17:19:29 by delvira-         ###   ########.fr       */
+/*   Created: 2022/09/26 18:58:32 by delvira-          #+#    #+#             */
+/*   Updated: 2022/09/27 16:10:53 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-	char	caracter;
-	char	*str;
-	int		i;
+	size_t	i;
+	char	*str1;
+	char	*str2;
 
-caracter = c;
-str = (char *)s;
-i = 0;
-	while (str[i] != '\0')
+	str1 = (char *)s1;
+	str2 = (char *)s2;
+	i = 0;
+	while (i < n)
 	{
-		if (str[i] == caracter)
+		if (str1[i] != str2[i])
 		{
-			return (&str[i]);
+			return (str1[i] - str2[i]);
 		}
-	i++;
+		i++;
 	}
-	if (str[i] == '\0' && caracter == '\0')
-	{
-		return (&str[i]);
-	}
-	return (NULL);
+	return (0);
 }
 
 // int main()
 // {
-// char strj[] = "";
-// printf("%s\n", strchr(strj, 'a'));
-// char strx[] = "";
-// printf("%s\n", ft_strchr(strx, 'a'));
+// char str1[] = "hoxlax";
+// char str2[] = "hoalaf";
+// printf("%d\n", memcmp(str1, str2, 4));
+// printf("%d\n", ft_memcmp(str1, str2, 4));
 // }
