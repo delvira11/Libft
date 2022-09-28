@@ -6,12 +6,11 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 19:16:05 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 14:44:50 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:47:25 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 

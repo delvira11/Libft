@@ -6,12 +6,11 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 13:52:59 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/22 14:03:39 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:48:02 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <ctype.h>
+#include "libft.h"
 
 int	ft_tolower(int c)
 {

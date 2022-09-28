@@ -6,11 +6,10 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:24:08 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/27 18:14:10 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:45:26 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
 #include "libft.h"
 
 void	*ft_memcpy(void *dst, const void *src, size_t n)

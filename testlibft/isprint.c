@@ -6,12 +6,11 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/21 17:52:14 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/24 16:12:02 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:42:50 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-// #include <stdio.h>
-// #include <ctype.h>
+#include "libft.h"
 
 int	ft_isprint(int c)
 {
