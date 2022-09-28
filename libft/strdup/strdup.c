@@ -1,28 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   strdup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:26:50 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:57:57 by delvira-         ###   ########.fr       */
+/*   Created: 2022/09/28 19:04:44 by delvira-          #+#    #+#             */
+/*   Updated: 2022/09/28 19:38:40 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
-int	ft_toupper(int c)
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 97 && c <= 122)
-	{
-	c = c - 32;
-	}
-	return (c);
+	char	*str;
+
+	str = (char *)malloc(strlen(s1) * sizeof(char));
+	if (s1 == NULL)
+		return (NULL);
+	strlcpy(str, s1, strlen(s1));
+	return (str);
 }
 
-// int main()
-// {
-// printf("%c", ft_toupper('&'));
-// printf("%c", toupper('%'));
-// }
+
+int main()
+{
+const char	s1[] = "Holaaa";
+printf("%p\n", ft_strdup(s1));
+printf("%p\n", strdup(s1));
+}

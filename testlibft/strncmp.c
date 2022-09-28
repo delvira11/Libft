@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 19:16:05 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:47:25 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 18:57:33 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
 	size_t	j;
 
 	i = 0;
-	j = strlen(s1);
+	j = ft_strlen(s1);
 	if (*s1 == '\0' && *s2 == '\0')
 		return (0);
 	while ((i < n) && i <= j)

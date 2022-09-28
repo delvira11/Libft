@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   toupper.c                                          :+:      :+:    :+:   */
+/*   strdup.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/22 13:26:50 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:57:57 by delvira-         ###   ########.fr       */
+/*   Created: 2022/09/28 19:04:44 by delvira-          #+#    #+#             */
+/*   Updated: 2022/09/28 19:53:17 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_toupper(int c)
+char	*ft_strdup(const char *s1)
 {
-	if (c >= 97 && c <= 122)
-	{
-	c = c - 32;
-	}
-	return (c);
-}
+	char	*str;
 
-// int main()
-// {
-// printf("%c", ft_toupper('&'));
-// printf("%c", toupper('%'));
-// }
+	str = (char *)malloc((ft_strlen(s1) + 1) * (sizeof(char)));
+	if (str == NULL)
+		return (NULL);
+	ft_strlcpy(str, s1, ft_strlen(s1) + 1);
+	return (str);
+}
