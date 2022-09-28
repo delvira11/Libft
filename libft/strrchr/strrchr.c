@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:24:29 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/26 18:24:54 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 14:23:05 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,33 +15,30 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	char	caracter;
-	char	*str;
 	int		i;
 
-caracter = (char )c;
-str = (char *)s;
 i = 0;
-	while (str[i] != '\0')
+	while (s[i] != '\0')
 		i++;
 	while (i >= 0)
 	{
-		if (str[i] == caracter)
+		if (s[i] == (unsigned char)c)
 		{
-			return (&str[i]);
+			return ((char *)&s[i]);
 		}
 	i--;
 	}
-	if (str[i] == '\0' && caracter == '\0')
+	if (!s)
 	{
-		return (&str[i]);
+		return ((char *)&s[i]);
 	}
 	return (NULL);
 }
 
+
 int main()
 {
-char str[50] = "tripouille";
-printf("%s\n", strrchr(str, 't' + 256 == str));
-printf("%s\n", ft_strrchr(str, 't' + 256 == str));
+char str[50] = "grsgege";
+printf("%s\n", strrchr(str, 's'));
+printf("%s\n", ft_strrchr(str, 's'));
 }

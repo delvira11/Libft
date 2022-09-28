@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/26 18:33:33 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/26 18:53:02 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 14:16:57 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	char	*str;
 	size_t	i;
 
-caracter = c;
+caracter = (char)c;
 str = (char *)s;
 i = 0;
 	while (i < n)
@@ -30,7 +30,7 @@ i = 0;
 		}
 	i++;
 	}
-	if (str[i] == '\0' && caracter == '\0')
+	if (!s)
 	{
 		return (&str[i]);
 	}
