@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:48:15 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/26 14:17:28 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:43:47 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	char	*source;
-	char	*dest;
-	size_t	i;
+	unsigned char	*source;
+	unsigned char	*dest;
+	size_t			i;
 
 i = 0;
-source = (char *)src;
-dest = (char *)dst;
+source = (unsigned char *)src;
+dest = (unsigned char *)dst;
 	if (dst > src)
 	{
 		while (len > 0)

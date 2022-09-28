@@ -6,11 +6,12 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:06:32 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/23 15:43:58 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/28 16:34:52 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include "libft.h"
 
 int	ft_atoi(const char *str)
 {
