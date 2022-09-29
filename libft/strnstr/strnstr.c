@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/27 16:11:33 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/27 18:40:12 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/29 16:36:49 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,6 @@ int main()
 	char str1[] = "lorem ipsum dolor sit amet";
 	char str2[] = "dolor";
 
-	printf("%s\n", ft_strnstr(str1, str2, 16));
-	printf("%s\n", strnstr(str1, str2, 16));
+	printf("%s\n", ft_strnstr(str1, str2, 19));
+	printf("%s\n", strnstr(str1, str2, 19));
 }

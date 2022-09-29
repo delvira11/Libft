@@ -1,46 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   memchr.c                                           :+:      :+:    :+:   */
+/*   strjoin.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/26 18:33:33 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/29 16:39:52 by delvira-         ###   ########.fr       */
+/*   Created: 2022/09/29 18:43:11 by delvira-          #+#    #+#             */
+/*   Updated: 2022/09/29 20:00:47 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
+#include <strings.h>
 #include <string.h>
+#include <stdlib.h>
 
-void	*ft_memchr(const void *s, int c, size_t n)
+char	*ft_strjoin(char const *s1, char const *s2)
 {
-	char	caracter;
 	char	*str;
+	size_t	s1len;
+	size_t	s2len;
 	size_t	i;
 
-caracter = c;
-str = (char *)s;
-i = 0;
-	while (i < n)
+	s1len = strlen(s1);
+	s2len = strlen(s2);
+	str = (char *)calloc((s1len + s2len + 1), sizeof(char));
+	if (!str)
+		return (NULL);
+	strlcpy(str, s1, s1len + 1);
+	i = 0;
+	while (i <= s2len + 1)
 	{
-		if (str[i] == caracter)
-		{
-			return (&str[i]);
-		}
-	i++;
+		str[s1len + i] = s2[i];
+		i++;
 	}
-	if (!s)
-	{
-		return (&str[i]);
-	}
-	return (NULL);
+	return (str);
 }
-
 
 int main()
 {
-char str[] = "Holaaa";
-printf("%s", ft_memchr(str, 'l', 3));
-printf("%s", memchr(str, 'l', 3));
+char s1[] = "Hola";
+char s2[] = "Buenas";
+printf("%s", ft_strjoin(s1, s2));
 }
