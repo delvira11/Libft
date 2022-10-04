@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/22 17:24:08 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/26 17:59:56 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/04 19:26:45 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,8 @@ i++;
 
 int main()
 {
-char src[] = "forlorn";
+char src[] = "bbbbbbbbbbbbb";
 char dst[] = "aaa";
-ft_memcpy(dst, src, 4);
+ft_memcpy(dst, src, 7);
 printf("%s", dst);
 }

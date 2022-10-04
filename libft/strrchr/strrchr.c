@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 16:24:29 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 14:23:05 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/30 14:23:19 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ i = 0;
 
 int main()
 {
-char str[50] = "grsgege";
-printf("%s\n", strrchr(str, 's'));
-printf("%s\n", ft_strrchr(str, 's'));
+char str[50] = "hola buenos dias";
+printf("%s\n", strrchr(str, "buenos"));
+printf("%s\n", ft_strrchr(str, "buenos"));
 }

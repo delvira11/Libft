@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/23 15:48:15 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/26 14:17:28 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/04 19:21:34 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,10 @@ dest = (char *)dst;
 	return (dest);
 }
 
-// int main()
-// {
-// char src[50] = "vxvcxvxcvfwfe)&)//$&gpoergjopehnperhhhthrthrw";
-// char dst[50] = "fwfewvnxcvxjkvcxkxcjvxcvcxf";
-// printf("%s\n", ft_memmove(dst, src, 15));
-// printf("%s\n", memmove(dst, src, 15));
-// }
+int main()
+{
+char src[50] = "feefefwhola";
+char dst[50] = "aaaaaaaaaaa";
+printf("%s\n", ft_memmove(dst, src, 7));
+printf("%s\n", memmove(dst, src, 7 ));
+}

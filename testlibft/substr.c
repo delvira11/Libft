@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 16:05:08 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/29 18:40:07 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/29 21:29:10 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,5 @@ left = ft_strlen(s) - (size_t)start;
 		str[i] = s[start + i];
 		i++;
 	}
-	str[i] = '\0';
 	return (str);
 }

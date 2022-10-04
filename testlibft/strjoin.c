@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/29 18:43:11 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/29 20:09:41 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/09/29 21:26:31 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,12 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 	s1len = ft_strlen(s1);
 	s2len = ft_strlen(s2);
-	str = (char *)calloc((s1len + s2len + 1), sizeof(char));
-	if (str == NULL)
+	str = (char *)ft_calloc((s1len + s2len + 1), sizeof(char));
+	if (!str)
 		return (NULL);
-	strlcpy(str, s1, s1len + 1);
+	ft_strlcpy(str, s1, s1len + 1);
 	i = 0;
-	while (i <= s2len + 1)
+	while (i < s2len)
 	{
 		str[s1len + i] = s2[i];
 		i++;

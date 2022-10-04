@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/28 16:30:29 by delvira-          #+#    #+#             */
-/*   Updated: 2022/09/28 18:39:51 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/03 16:35:55 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ void	*ft_calloc(size_t count, size_t size)
 // 	str = (char *)malloc(sizeof(char) * strlen(str2) + 1);
 // 	if(str == NULL)
 // 		retunr(NULL);
-
 
 // 	ft_strlcpy(str2, str, strlen(str2));
 
