@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/30 14:12:37 by delvira-          #+#    #+#             */
-/*   Updated: 2022/10/01 18:08:38 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/06 19:54:04 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 // int main()
 // {
-// char s1[] = "bbb3252523243hregegef4553525gre523vv";
-// char set[] = "0123456789";
+// char s1[] = "holaa234aaaa";
+// char set[] = "1234567890";
 
 // printf(" %s\n", ft_strtrim(s1, set));
 // }
