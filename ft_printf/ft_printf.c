@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/12 13:42:06 by delvira-          #+#    #+#             */
-/*   Updated: 2022/10/19 22:36:14 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/11/07 17:28:03 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,25 +47,15 @@ int	ft_printf(char const *str, ...)
 	len = 0;
 	while (str[i])
 	{
-		if (str[i] == '%')
+		if (str[i] != '%')
+			len += printchar(str[i]);
+		else
 		{
 			len += func(args, str[i + 1]);
 			i++;
 		}
-		else
-			len += printchar(str[i]);
 		i++;
 	}
 	va_end(args);
 	return (len);
 }
-
-// int main()
-// {
-// 	///ft_printf("Hola %p buenas\n", "456");
-// 	///printf("Hola %p buenas", "456");
-// 	printf("\n mi :%i", ft_printf("%p", "456"));
-// 	///printf("\n su: %i", printf("%p", "456"));
-// 	///printf ("mio = %d\n orig = %d\n", c, d);
-// 	///system("leaks -q a.out");
-// }

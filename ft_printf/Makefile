@@ -1,8 +1,8 @@
-CC=cc
+CC=gcc
 NAME=libftprintf.a
 CFLAGS=-Wall -Wextra -Werror
 OPTIONS=-c -I.
-SRC=ft_printf.c print_hex.c print_char_str.c print_unsigned.c libft/*.c
+SRC=ft_printf.c print_hex.c print_char_str.c print_unsigned.c ft_itoa.c ft_strlen.c ft_strlcpy.c
 OBJ=*.o
 
 all: $(NAME)

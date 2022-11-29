@@ -6,19 +6,13 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 16:57:19 by delvira-          #+#    #+#             */
-/*   Updated: 2022/10/19 22:41:25 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:01:34 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-	return (1);
-}
-
-int	ft_hex_len(unsigned long n)
+static int	ft_hex_len(unsigned long n)
 {
 	int	i;
 
@@ -43,9 +37,9 @@ int	ft_print_hexlow(unsigned long n)
 	else
 	{
 		if (n <= 9)
-			ft_putchar(n + '0');
+			printchar(n + '0');
 		else
-			ft_putchar(n - 10 + 'a');
+			printchar(n - 10 + 'a');
 	}
 	return (ft_hex_len(n));
 }
@@ -62,9 +56,9 @@ int	ft_print_hexhigh(unsigned int n)
 	else
 	{
 		if (n <= 9)
-			ft_putchar(n + '0');
+			printchar(n + '0');
 		else
-			ft_putchar(n - 10 + 'A');
+			printchar(n - 10 + 'A');
 	}
 	return (ft_hex_len(n));
 }

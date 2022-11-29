@@ -6,15 +6,13 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 16:13:02 by delvira-          #+#    #+#             */
-/*   Updated: 2022/10/19 22:57:30 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/10/24 17:14:12 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <unistd.h>
+#include "ft_printf.h"
 
-int	ft_unsigned_len(unsigned int n)
+static int	ft_unsigned_len(unsigned int n)
 {
 	int	i;
 
@@ -27,7 +25,7 @@ int	ft_unsigned_len(unsigned int n)
 	return (i);
 }
 
-char	*ft_uitoa(unsigned int n)
+static char	*ft_uitoa(unsigned int n)
 {
 	char			*num;
 	unsigned int	len;
