@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:46:36 by delvira-          #+#    #+#             */
-/*   Updated: 2022/12/14 18:00:57 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:10:36 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,7 +121,7 @@ int	main(int argc, char *argv[])
 	matrix = ft_matrix(filename);
 	ft_printdots(img, matrix, filename);
 	mlx_image_to_window(mlx, img, 0, 0);
-	mlx_loop_hook(mlx, &hook, mlx);
+	//mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
 }
 
