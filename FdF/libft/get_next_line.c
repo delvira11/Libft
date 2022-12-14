@@ -6,7 +6,7 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/24 22:05:43 by delvira-          #+#    #+#             */
-/*   Updated: 2022/12/02 17:32:52 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/12/10 18:06:16 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*ft_get_next_line(int fd)
 // int	main(void)
 // {
 // 	char	*str = "";
-// 	int fd = open("test", O_RDONLY);
+// 	int fd = open("testline.c", O_RDONLY);
 // 	while (str)
 // 	{
 // 		str = get_next_line(fd);

@@ -4,7 +4,7 @@ MLX_LIB=MLX42/libmlx42.a
 LIBFT=libft/libft.a
 CFLAGS=-Wall -Wextra -Werror
 LIBRARIES= -lglfw -L "/Users/$(USER)/.brew/opt/glfw/lib" -lm -framework OpenGL
-SRC=main.c
+SRC=main.c drawlines.c printdots.c utils.c
 OBJ=$(SRC:.c=.o)
 
 # $@ .o
@@ -37,3 +37,9 @@ fclean: clean
 	make -C libft fclean
 
 re: clean fclean all
+
+push:
+	git add .
+	git status
+	git commit -m "antes de destruirlo1"
+	git push

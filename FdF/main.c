@@ -6,121 +6,149 @@
 /*   By: delvira- <delvira-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/05 14:46:36 by delvira-          #+#    #+#             */
-/*   Updated: 2022/12/05 15:03:05 by delvira-         ###   ########.fr       */
+/*   Updated: 2022/12/14 18:00:57 by delvira-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MLX42/include/MLX42/MLX42.h"
+#include "fdf.h"
+#include "math.h"
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
 #include "libft/libft.h"
-#define WIDTH 256
-#define HEIGHT 256
 
-int	ft_get_heigh(void)
+void	hook(void *param)
 {
-	// Esta funcion devuelve la altura del input
-	char	*str;
-	int		i;
-	int		fd;
+	mlx_t	*mlx;
 
-	i = 0;
-	fd = open("test.txt", O_RDONLY);
-	str = ft_get_next_line(fd);
-	while (str)
-	{
-		str = ft_get_next_line(fd);
-		i++;
-	}
-	close (fd);
-	return (i);
+	mlx = param;
+	if (mlx_is_key_down(mlx, MLX_KEY_ESCAPE))
+		mlx_close_window(mlx);
 }
 
-int	ft_get_line_width(void)
+void	ft_free_split(char **split)
 {
-	// Esta funcion devuelve el numero de numeros en la linea
-	char	*str;
-	char	**linesplited;
-	int		x;
-	int		fd;
+	int	x;
 
 	x = 0;
-	fd = open("test.txt", O_RDONLY);
-	str = ft_get_next_line(fd);
-	linesplited = ft_split(str, ' ');
-	while (linesplited[x])
+	while (split[x])
+	{
+		free (split[x]);
 		x++;
-	close(fd);
-	return (x);
+	}
+	free (split);
 }
 
-int	**ft_matrix_fill(int **matrix, int fd)
+t_point	**ft_matrix_fill(t_point **matrix, int fd, char *filename)
 {
 	int		i;
-	int		j;
 	int		x;
 	char	*line;
 	char	**linesplited;
-
+	int		xcoord;
+	int		ycoord;
+	int 	heigh = ft_get_heigh(filename);
 	x = 0;
-	j = 0;
-	x = 0;
+	xcoord = 0;
+	ycoord = 0;
 	line = ft_get_next_line(fd);
-	while (line)
+	while (x < heigh)
 	{
 		i = 0;
-		j = 0;
+		xcoord = 0;
 		linesplited = ft_split(line, ' ');
-		while (linesplited[j])
+		while (linesplited[i])
 		{
-			matrix[x][i] = ft_atoi(linesplited[j]);
-			j++;
+			matrix[x][i].valor = ft_atoi(linesplited[i]);
+			matrix[x][i].xcoord = ((xcoord - ycoord) * cos(0.5)) + 900;
+			matrix[x][i].ycoord = ((xcoord + ycoord) * sin(0.5) + 100
+					- matrix[x][i].valor * 1);
 			i++;
+			xcoord += 8;
 		}
+		ft_free_split(linesplited);
+		free (line);
 		line = ft_get_next_line(fd);
+		ycoord += 8;
 		x++;
-	}	
+	}
+	free (line);
 	return (matrix);
 }
 
-int	**ft_matrix(int heigh, int width)
+t_point	**ft_matrix(char *filename)
 {
-	int		**matrix;
-	int		fd;
-	int		malloccounter;
+	t_point		**matrix;
+	int			fd;
+	int			malloccounter;
+	int			heigh;
+	int			width;
 
+	heigh = ft_get_heigh(filename);
+	width = ft_get_line_width(filename);
+	printf("%i\n", heigh);
+	printf("%i\n", width);
 	malloccounter = 0;
-	fd = open("test.txt", O_RDONLY);
-	matrix = (int **)malloc(heigh * sizeof(int *));
+	matrix = (t_point **)malloc(heigh * sizeof(t_point *));
 	if (!matrix)
-		return (matrix);
+		return (NULL);
 	while (malloccounter < heigh)
 	{
-		matrix[malloccounter] = (int *)malloc(width * sizeof(int));
+		matrix[malloccounter] = (t_point *)malloc(width * sizeof(t_point));
+		if (!matrix[malloccounter])
+			return (NULL);
 		malloccounter++;
 	}
-	matrix = ft_matrix_fill(matrix, fd);
+	fd = open(filename, O_RDONLY);
+	matrix = ft_matrix_fill(matrix, fd, filename);
 	close(fd);
 	return (matrix);
 }
 
-int	main(void)
+int	main(int argc, char *argv[])
 {
-	int	**matrix;
-	// int	heigh;
-	// int	width;
+	mlx_t			*mlx;
+	mlx_image_t		*img;
+	t_point			**matrix;
+	char			*filename;
 
-	// heigh = ft_get_heigh();
-	// width = ft_get_line_width();
-	matrix = ft_matrix(ft_get_heigh(), ft_get_line_width());
+	filename = argv[1];
+	if (argc > 2 != argc < 2)
+		return (0);
+	mlx = mlx_init(5000, 5000, "test", false);
+	img = mlx_new_image(mlx, 10000, 10000);
+	matrix = ft_matrix(filename);
+	ft_printdots(img, matrix, filename);
+	mlx_image_to_window(mlx, img, 0, 0);
+	mlx_loop_hook(mlx, &hook, mlx);
+	mlx_loop(mlx);
+}
+
+// int	main(void)
+// {
+// 	int		heigh;
+// 	int		width;
+// 	t_point **matrix;
+// 	heigh = ft_get_heigh();
+// 	width = ft_get_line_width();
+// 	matrix = ft_matrix();
 // 	int row, columns;
 // for (row=0; row<heigh; row++)
 // {
 //     for(columns=0; columns<width; columns++)
 //     {
-//         printf("%i ", matrix[row][columns]);
+// 		// printf("row: %i\n", row);
+// 		// printf("col: %i\n", columns);
+// 		printf("%i ", matrix[row][columns].valor);
+// 		// printf("x: %i\n", matrix[row][columns].xcoord);
+// 		// printf("y: %i\n\n", matrix[row][columns].ycoord);
 //     }
 //     printf("\n");
 // }
-}
+
+// system("leaks -q fdf");
+// // int fd = open("test.txt", O_RDONLY);
+// // printf("%s", ft_get_next_line(fd));
+// // printf("%s", ft_get_next_line(fd));
+// }
