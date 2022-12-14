@@ -42,4 +42,4 @@ push:
 	git add .
 	git status
 	git commit -m "antes de destruirlo1"
-	git push
+	git push -u origin main
